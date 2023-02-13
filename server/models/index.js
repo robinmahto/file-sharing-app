@@ -1,0 +1,1 @@
+export {default as FileModels} from './file.model';
