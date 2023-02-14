@@ -1,5 +1,5 @@
 import express from 'express';
-import { fileController } from '../controllers';
+import { fileController, downloadFileController } from '../controllers';
 const router = express.Router();
 
 router.get('/', (req, res, next)=>{
@@ -7,5 +7,6 @@ router.get('/', (req, res, next)=>{
 })
 
 router.post('/files', fileController);
+router.get('/files/:uuid', downloadFileController)
 
 export default router;

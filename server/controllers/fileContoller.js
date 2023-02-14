@@ -37,14 +37,13 @@ const fileController = (req, res, next) => {
             path: req.file.path,
             size: req.file.size
         })
-
+      // save in the database
         const response = await file.save();
+      // response
         return res.json({ files: `${APP_BASE_URL}/files/${response.uuid}` })
 
     })
 
-
-    // response
 }
 
 export default fileController;
