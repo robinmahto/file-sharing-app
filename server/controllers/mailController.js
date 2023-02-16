@@ -19,7 +19,7 @@ const mailController = {
         file.receiver = emailTo;
         const response = file.save();
         // send email
-        sendEmail({
+        const result = await sendEmail({
             from : emailFrom,
             to : emailTo,
             subject : 'file sharing applications',
@@ -31,6 +31,7 @@ const mailController = {
                 expires:'24 hours'
             })
         })
+        res.json({response, result});
     }
 }
 
